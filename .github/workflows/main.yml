@@ -37,11 +37,11 @@ jobs:
 
     - name: Zip folder on Linux
       if: matrix.os == 'ubuntu-latest'
-      run: zip -r VowelCountApp-${{ matrix.os }}.zip ./output/*
+      run: zip -r VowelCountApp-${{ matrix.os }}-${{ github.run_id }}.zip ./output/*
 
     - name: Zip folder on Windows
       if: matrix.os == 'windows-latest'
-      run: powershell -Command "Compress-Archive -Path 'output/*' -DestinationPath 'VowelCountApp-${{ matrix.os }}.zip'"
+      run: powershell -Command "Compress-Archive -Path 'output/*' -DestinationPath 'VowelCountApp-${{ matrix.os }}-${{ github.run_id }}.zip'"
 
     - name: Upload Artifacts
       uses: actions/upload-artifact@v4
@@ -53,7 +53,7 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
           files: |
-            VowelCountApp-${{ matrix.os }}.zip
+            VowelCountApp-${{ matrix.os }}-${{ github.run_id }}.zip
           name: VowelCountApp-${{ github.run_id }}
           tag_name: ${{ github.run_id }}
       env:
