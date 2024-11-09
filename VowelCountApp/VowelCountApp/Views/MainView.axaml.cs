@@ -1,3 +1,4 @@
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 
@@ -27,5 +28,10 @@ public partial class MainView : UserControl
             }
         }
         TextBoxRes.Text = vcount.ToString();
+    }
+
+    private void Button_OnClick_Exit(object? sender, RoutedEventArgs e)
+    {
+        System.Environment.Exit(0);
     }
 }
