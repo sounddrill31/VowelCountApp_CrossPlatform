@@ -35,8 +35,26 @@ jobs:
     - name: Publish
       run: dotnet publish VowelCountApp/VowelCountApp.Desktop --configuration Release --output ./output
 
+    - name: Zip folder on Linux
+      if: matrix.os == 'ubuntu-latest'
+      run: zip -r ./output/* VowelCountApp-${{ matrix.os }}.zip
+
+    - name: Zip folder on Windows
+      if: matrix.os == 'windows-latest'
+      run: powershell -Command "Compress-Archive -Path 'output/*' -DestinationPath 'VowelCountApp-${{ matrix.os }}.zip'"
+
     - name: Upload Artifacts
       uses: actions/upload-artifact@v4
       with:
         name: dotnet-artifacts-${{ matrix.os }}
         path: ./output
+
+    - name: Upload to Release
+      uses: softprops/action-gh-release@v1
+      with:
+          files: |
+            VowelCountApp-${{ matrix.os }}.zip
+          name: VowelCountApp-${{ github.run_id }}
+          tag_name: ${{ github.run_id }}
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
