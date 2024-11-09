@@ -30,10 +30,10 @@ jobs:
         dotnet workload restore
 
     - name: Build
-      run: dotnet build --configuration Release #--no-restore
+      run: dotnet build VowelCountApp.Desktop --configuration Release #--no-restore
 
     - name: Publish
-      run: dotnet publish --configuration Release --output ./output
+      run: dotnet publish VowelCountApp.Desktop --configuration Release --output ./output
 
     - name: Upload Artifacts
       uses: actions/upload-artifact@v4
