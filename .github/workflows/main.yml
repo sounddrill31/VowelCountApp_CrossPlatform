@@ -25,12 +25,12 @@ jobs:
       with:
         dotnet-version: '8.0.x'  # Specify your .NET version here
 
-#    - name: Restore dependencies
-#      run: |
-#        dotnet workload restore
+    - name: Restore dependencies
+      run: |
+        dotnet workload restore
 
     - name: Build
-      run: dotnet build --configuration Release #--no-restore
+      run: dotnet build --configuration Release --no-restore
 
     - name: Publish
       run: dotnet publish --configuration Release --output ./output
