@@ -35,6 +35,7 @@ Simple C# App built using Avalonia UI. It checks the letters in the string enter
   > Note, Linux users can not yet take advantage of this due to limitations of X11. The code will run and the window will still work on Linux, but the full effect will not be realised.
 - No Native Wayland support is available
 - Mac, Android, iOS, Web support is broken/untested
+- Clicking on the button before entering the string crashes the app
 ## Credits
 - [Dan Walmsley](https://github.com/danwalmsley) for the [Music Store App Guide](https://docs.avaloniaui.net/docs/0.10.x/tutorials/music-store-app/)
 - [Joel Paul](https://github.com/Jack-Pots) for helping me out in-person
