@@ -37,3 +37,4 @@ Simple C# App built using Avalonia UI. It checks the letters in the string enter
 - Mac, Android, iOS, Web support is broken/untested
 ## Credits
 - Dan Walmsley for the [Music Store App Guide](https://docs.avaloniaui.net/docs/0.10.x/tutorials/music-store-app/)
+- [Joel Paul](https://github.com/Jack-Pots) for helping me out in-person
