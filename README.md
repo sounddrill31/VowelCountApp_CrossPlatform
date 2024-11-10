@@ -42,6 +42,7 @@ Simple C# App built using Avalonia UI. It checks the letters in the string enter
 ## Known Issues
 - On (x)Wayland, the blur is broken and X11 is untested. The AvaloniaUI Media Player App guide says this about the blur stuff:
   > Note, Linux users can not yet take advantage of this due to limitations of X11. The code will run and the window will still work on Linux, but the full effect will not be realised.
+  - This same issue exists on Android as well
 - No Native Wayland support is available
 - Mac, iOS, Web support is broken/untested
 - Clicking on the button before entering the string crashes the app
