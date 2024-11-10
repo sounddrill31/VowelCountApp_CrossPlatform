@@ -9,7 +9,7 @@ namespace VowelCountApp.Android;
 [Activity(
     Label = "VowelCountApp.Android",
     Theme = "@style/MyTheme.NoActionBar",
-    Icon = "@drawablle/icon",
+    Icon = "@drawable/icon",
     MainLauncher = true,
     ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize | ConfigChanges.UiMode)]
 public class MainActivity : AvaloniaMainActivity<App>
